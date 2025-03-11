@@ -1,13 +1,15 @@
-import { http, createConfig } from "wagmi";
+import { http } from "wagmi";
 import { bsc, bscTestnet, mainnet } from "wagmi/chains";
-import { metaMask } from "wagmi/connectors";
+import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 
-export const config = createConfig({
+export const config = getDefaultConfig({
+  appName: "My RainbowKit App",
+  projectId: "YOUR_PROJECT_ID",
   chains: [mainnet, bsc, bscTestnet],
-  connectors: [metaMask()],
   transports: {
     [mainnet.id]: http(),
     [bsc.id]: http(),
     [bscTestnet.id]: http(),
   },
+  // ssr: true,
 });
