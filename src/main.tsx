@@ -9,6 +9,7 @@ import Chain from "./components/Chain";
 import Balance from "./components/Balance";
 import Transaction from "./components/Transaction";
 import { ConnectButton, RainbowKitProvider } from "@rainbow-me/rainbowkit";
+import ChainSelector from "./components/ChainSelector";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,15 @@ createRoot(document.getElementById("root")!).render(
           <Chain />
           <Balance />
           <Transaction />
+
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+
+          <h1>Custom Chain Selector</h1>
+          <ChainSelector />
         </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
